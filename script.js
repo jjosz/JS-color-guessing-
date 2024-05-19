@@ -1,5 +1,8 @@
 //getting div id='game' from index.html
 const game = document.getElementById('game');
+
+const textBox = document.createElement('div');
+game.appendChild(textBox);
 //creating new div inside game
 const colorSquare = document.createElement('div');
 game.appendChild(colorSquare);
@@ -48,10 +51,21 @@ generateNewColor();
 
 function sendRGB(){
 if(inputRed.value&&inputGreen.value&&inputBlue.value){
-console.log('Your RGB: (' + inputRed.value + ', ' + inputGreen.value + ', ' + inputBlue.value + ')' )
+    console.log('Your RGB: (' +
+        inputRed.value + ', ' +
+        inputGreen.value + ', ' +
+        inputBlue.value + ')' )
+    console.log('-----');
+    textBox.innerHTML = "";
+    inputRed.value = '';
+    inputGreen.value = '';
+    inputBlue.value = '';
+    generateNewColor();
 }
-console.log('-----');
-generateNewColor();
+
+else{
+textBox.innerHTML = "You need to type three numbers 0-255!"
+}
 }
 
 function generateNewColor(){
