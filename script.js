@@ -57,9 +57,9 @@ generateNewColor();
 
 function sendRGB(){
 if(inputRed.value&&inputGreen.value&&inputBlue.value){
-    result = (1-(Math.abs(inputRed.value-randNumberRed)/255+
-    Math.abs(inputGreen.value-randNumberGreen)/255+
-    Math.abs(inputBlue.value-randNumberBlue)/255))*100;
+    result = ((1-(Math.abs(inputRed.value-randNumberRed)/255))*100+
+    (1-(Math.abs(inputGreen.value-randNumberGreen)/255))*100+
+    (1-(Math.abs(inputBlue.value-randNumberBlue)/255))*100)/3;
     console.log('Your are '+ result +'% correct.');
     console.log('Your RGB: (' +
         inputRed.value + ', ' +
@@ -86,4 +86,14 @@ randNumberBlue = Math.floor(Math.random()*255);
 
 console.log('Generated RGB: (' + randNumberRed + ', '+randNumberGreen + ', '+randNumberBlue+ ')');
 colorSquare.style.backgroundColor = 'rgb('+randNumberRed+', '+randNumberGreen+', '+randNumberBlue+')';
+}
+function generateFromText(a, b, c){
+if(((a>=0)&&(a<=255))&&((b>=0)&&(b<=255))&&((c>=0)&&(c<=255)))
+{
+randNumberRed = a;
+randNumberGreen = b;
+randNumberBlue = c;
+console.log('Generated RGB: (' + randNumberRed + ', '+ randNumberGreen + ', '+ randNumberBlue + ')');
+colorSquare.style.backgroundColor = 'rgb('+randNumberRed+', '+randNumberGreen+', '+randNumberBlue+')';
+}
 }
