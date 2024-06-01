@@ -5,8 +5,9 @@ const textBox = document.createElement('div');
 game.appendChild(textBox);
 //creating new div inside game
 const colorSquare = document.createElement('div');
+colorSquare.id='colorSquare';
 game.appendChild(colorSquare);
-colorSquare.style = 'width: 100px; height:100px;';
+//colorSquare.style = '';
 //creating inputs for red, green and blue
 const inputRed = document.createElement('input');
 const inputGreen = document.createElement('input');
@@ -25,11 +26,8 @@ let randNumberGreen = 0;
 let randNumberBlue = 0;
 //Adding created objects to game
 game.appendChild(inputRed);
-game.appendChild(document.createElement('br'));
 game.appendChild(inputGreen);
-game.appendChild(document.createElement('br'));
 game.appendChild(inputBlue);
-game.appendChild(document.createElement('br'));
 game.appendChild(buttonSend);
 
 
@@ -51,8 +49,8 @@ Object.assign(inputBlue, {
 buttonSend.addEventListener('click',sendRGB);
 
 
-colorSquare.style = 'width: 100px; height:100px;';
-colorSquare.style = 'width: 100px; height:100px;';
+//colorSquare.style = 'width: 100px; height:100px;';
+//colorSquare.style = 'width: 100px; height:100px;';
 
 generateNewColor();
 
